@@ -9,39 +9,36 @@ function playRound(playerSelection , computerSelection){            //funcion qu
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     if (playerSelection === computerSelection){
-        return "Los dos han elegido lo mismo, esto es un empate!"
-    }else if (playerSelection === "rock" && computerSelection === "scissors"){
-        return "Has ganado , Rock le gana a Scissors";
-    }else if (playerSelection === "rock" && computerSelection === "paper"){
-        return "Lo siento, has perdido ya que Paper le gana a Rock";
-    }else if (playerSelection === "paper" && computerSelection === "rock"){
-        return "Felicidades, has ganado . Paper le gana a Rock";
-    }else if (playerSelection === "paper" && computerSelection === "scissors"){
-        return "Lo siento, has perdido ya que Scissors le gana a Paper";
-    }else if (playerSelection === "scissors" && computerSelection === "Rock"){
-        return "Lo siento, has perdido ya que Rock le gana a Scissors";
-    }else if (playerSelection === "scissors" && computerSelection === "paper"){
-        return "Felicidades, has ganado . Scissors le gana a Paper";
-    }
-
+        return "The round ends in a Tie"
+    }else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper"){
+        return "You won this round , nice luck you have there";
+    }else if ((playerSelection === "rock" && computerSelection === "paper" || playerSelection === "paper" && computerSelection === "scissors" || playerSelection === "scissors" && computerSelection === "Rock")){
+        return "You lose this one , oh i'm so sorry to see that";
+    }else
+        return "Your choice isn't available in this game, please choose the permite plays";
 
 }
 
-/*function game(playRound){
+function game(playRound){
     for (let i =0; i < 5; i++){
-        let playerSelection = prompt('Elige entre piedra , papel o tijera ') ;
+        let playerSelection = prompt('Please select between these 3 choices: Rock, Paper or Scissors ') ;
         console.log(playerSelection);
         let computerSelection = computerPlay();
         console.log(computerSelection);
         playRound(playerSelection, computerSelection);
-        console.log(playRound);
+        console.log(playRound(playerSelection, computerSelection));
     }
-}*/
 
-const playerSelection = prompt("por favor elige que quieres utilizar en la partida "  );                //respuesta del usuario
+    alert("Thanks for playing , see you around later")
+}
+
+console.log(game(playRound))
+
+/*const playerSelection = prompt("por favor elige que quieres utilizar en la partida "  );                //respuesta del usuario
 console.log(playerSelection);
 
 const computerSelection = computerPlay();           //respuesta de la computadora
 console.log(computerSelection);
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(playRound(playerSelection, computerSelection));*/ //Esto es por si solo se quiere jugar 1 partida
+
